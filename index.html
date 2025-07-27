@@ -102,6 +102,34 @@
         interdum tristique ligula.</marquee
       >
     </footer>
+    <script>
+  // Daftar URL gambar eksternal
+  const wallpapers = [
+    'https://i.pinimg.com/1200x/1d/c5/33/1dc533eb3ab35f47780184bb6c881b14.jpg',
+    'https://i.pinimg.com/736x/ad/cc/83/adcc8338e622714e23e54a8141b27b7e.jpg',
+    'https://i.pinimg.com/1200x/40/a8/57/40a8578ac5b223f4e8834bae7bdce8d3.jpg',
+    'https://i.pinimg.com/1200x/cc/a8/55/cca85530f828674985a03a5ca83e83a4.jpg',
+    'https://i.pinimg.com/736x/fd/55/3d/fd553dde6f51f80d3f03e0323740c14a.jpg',
+    'https://i.pinimg.com/1200x/ec/fb/65/ecfb65aeef2c7b03d3e60bba2c927564.jpg',
+    'https://i.pinimg.com/1200x/6c/69/49/6c6949d88e186895ad9d3c8a21055132.jpg',
+    'https://i.pinimg.com/1200x/11/50/ce/1150ceb3059ff63f467707303130232d.jpg',
+    'https://i.pinimg.com/736x/f7/44/72/f74472defeabe9bdc5e9ade20bec984d.jpg',
+    'https://i.pinimg.com/736x/ae/b1/68/aeb168c7f440df7a67a8bd8b1affb268.jpg',
+    'https://i.pinimg.com/1200x/ab/48/25/ab4825b1e8f5d8ed4be910ebc01c817b.jpg',
+    'https://i.pinimg.com/736x/70/c5/ff/70c5ff1b69fb270d5c202e77035bdb95.jpg',
+    // Tambahkan link lainnya
+  ];
+
+  // Pilih secara acak
+  const randomWallpaper = wallpapers[Math.floor(Math.random() * wallpapers.length)];
+
+  // Ganti background body dengan gambar acak
+  document.body.style.backgroundImage = `url('${randomWallpaper}')`;
+  document.body.style.backgroundSize = 'cover';
+  document.body.style.backgroundPosition = 'center';
+</script>
+</body>
+</html>
   </body>
 </html>
 
