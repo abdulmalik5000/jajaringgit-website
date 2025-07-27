@@ -1,58 +1,63 @@
+<?php
+$showIcons = false;
+$password = "abdul.2025";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["password"]) && $_POST["password"] === $password) {
+        $showIcons = true;
+    } else {
+        $error = "Password salah!";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Jajaringgit - Contact</title>
-    <link rel="icon" type="image/x-icon" href="loggo.png" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="top-bar"></div>
-    <nav>
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a href="login.html">LOGIN</a></li>
-        <li><a href="sign_in.html">SIGN IN</a></li>     
-      </ul>
-    </nav>
-    <div class="content">
-        <h1>CONTACT ME!</h1>
-    <footer>
-      <p>© 2025 Abdul Malik. All rights reserved.</p>
-      <marquee
-      >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce feugiat
-        volutpat odio. Donec consequat felis vel est pharetra, eu sollicitudin
-        quam varius. Sed consequat nisl a interdum mollis. Fusce fringilla
-        facilisis lacinia. In blandit nulla eu lacinia fringilla. Morbi bibendum
-        neque in massa rhoncus elementum. Curabitur aliquet gravida dui, a
-        lobortis neque porttitor eu. Suspendisse eget iaculis libero. Proin
-        fermentum maximus dui at vehicula. Phasellus id sollicitudin justo, id
-        finibus dui. Cras aliquet ipsum ac arcu egestas finibus. Nullam viverra
-        bibendum orci, eget porta libero ullamcorper non. Vivamus id erat
-        tortor. Nullam posuere sodales imperdiet. Etiam mauris justo, posuere
-        quis eleifend nec, consectetur sit amet odio. Fusce et arcu id nibh
-        maximus feugiat. Nulla convallis dapibus massa, eu egestas purus
-        condimentum quis. Integer eget sem sed lorem fringilla faucibus.
-        Curabitur et justo orci. Donec dictum metus nec dolor faucibus, vel
-        aliquet erat scelerisque. Vivamus nec mi id elit volutpat bibendum non
-        nec felis. Praesent venenatis suscipit ultrices. Aenean egestas diam et
-        fringilla consectetur. Morbi in scelerisque libero, et porttitor metus.
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Integer risus risus, tincidunt nec ligula a,
-        fermentum rhoncus sapien. Proin rhoncus, erat ut viverra pretium, leo
-        sem accumsan orci, non convallis enim arcu tincidunt velit. Aenean vitae
-        nulla ut dolor hendrerit placerat. Phasellus ut dictum justo, feugiat
-        rhoncus lorem. Ut condimentum dui aliquet mattis vestibulum.
-        Pellentesque aliquam augue lorem, vel facilisis tellus malesuada vitae.
-        Praesent mollis sapien luctus sapien facilisis consectetur. Etiam at
-        ipsum ex. In bibendum tincidunt fringilla. Aenean ullamcorper blandit
-        accumsan. Cras varius bibendum vulputate. Curabitur tristique sapien
-        turpis, ac aliquam ex faucibus accumsan. Nunc non lectus egestas,
-        elementum turpis in, dapibus enim. Sed elit velit, ornare ac arcu vel,
-        interdum tristique ligula.</marquee
-      >
-    </footer>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Jajaringgit - Contact</title>
+  <link rel="icon" type="image/x-icon" href="loggo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="top-bar">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="contact.php">CONTACT</a></li>
+      <li><a href="login.html">LOGIN</a></li>
+      <li><a href="sign_in.html">SIGN IN</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h1>CONTACT ME!</h1>
+
+    <?php if (!$showIcons): ?>
+      <form method="POST" style="margin-top: 20px;">
+        <label>Masukkan Password untuk melihat ikon:</label><br>
+        <input type="password" name="password" required />
+        <button type="submit">Submit</button>
+      </form>
+      <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
+    <?php else: ?>
+      <!-- IKON SOSIAL -->
+      <div class="social-icons">
+        <a href="https://wa.me/628113913538" target="_blank" title="Chat WhatsApp">
+          <img src="https://freeiconspng.com/uploads/logo-whatsapp-png-pic-0.png" width="28" alt="WhatsApp" />
+        </a>
+        <a href="tel:+628113913538" title="Call Phone">
+          <img src="https://e7.pngegg.com/pngimages/369/379/png-clipart-telephone-call-mobile-phones-computer-icons-call-volume-symbol-miscellaneous-text.png" width="28" alt="Phone" />
+        </a>
+        <a href="https://instagram.com/Jajaringgit/" target="_blank" title="Visit Instagram">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" width="28" alt="Instagram" />
+        </a>
+      </div>
+    <?php endif; ?>
+  </div>
+
+  <footer>
+    <p>© 2025 Abdul Malik. All rights reserved.</p>
+  </footer>
+</body>
 </html>
