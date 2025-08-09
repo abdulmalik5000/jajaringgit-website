@@ -1,6 +1,5 @@
 body {
   background: #181818;
-  background-image: url('https://i.redd.it/d2cf2rpqll9a1.jpg');
   background-size: cover;
   color: #eee;
 }
@@ -35,3 +34,4 @@ body {
     margin: 20px auto;     /* Auto biar posisinya di tengah */
     width: fit-content;    /* Lebar sesuai teks */
 }
+
